@@ -1,0 +1,205 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+    background-color: #000000;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+.home-link{
+    color: #8E7C93;
+
+}
+.gallery-link{
+    color: #8E7C93;
+
+}
+.about-link{
+    color: #8E7C93;
+
+}
+.contact-link{
+    color: #8E7C93;
+    
+}
+    
+nav ul li a {
+    text-decoration: none;
+    color: #FFF;
+    font-weight: bold;
+}
+
+/* Background particles */
+.background-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('your-background-image.jpg') no-repeat center center fixed; /* Replace with your background image */
+    background-size: cover;
+    z-index: -1; /* Keep it behind other content */
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh; /* Full viewport height */
+    background: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for fade-out effect */
+    z-index: 1; /* Make sure hero text is above background */
+}
+
+.hero-text h1 {
+    color: #fff; /* Hero text color */
+    font-size: 3rem; /* Font size */
+}
+
+.gallery {
+    padding: 50px;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Adjust the height to your preference */
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px; /* Optional */
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.image-info {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.about {
+    padding: 50px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact {
+    padding: 50px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0066ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #0051cc;
+}
+
+.popup-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 100; /* Ensure it’s above other content */
+    display: none; /* Initially hidden */
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+}
