@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Astrophotography Showcase</title>
+    <link rel="stylesheet" href="style-astro.css">
+</head>
+<body>
+
+  <!-- Background for particle effect -->
+  <div class="background-particles"></div>
+
+  <!-- Navigation Bar -->
+  <header>
+      <nav>
+          <ul>
+              <li><a href="#home" class="home-link">Home</a></li>
+              <li><a href="gallery.html" class="gallery-link">Gallery</a></li>
+              <li><a href="#about" class="about-link">About</a></li>
+              <li><a href="#contact" class="contact-link">Contact</a></li>
+          </ul>
+      </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+      <div class="hero-text">
+          <h1>Capturing the Wonders of the Night Sky</h1>
+      </div>
+  </section>
+
+<!-- gallery-->
+    <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <a href="C:\Users\lorik\OneDrive\Desktop\html projects\Astro-WEB-Showcase\images\]Milkyway-Final.png" target="_blank">
+                    <img src="C:\Users\lorik\OneDrive\Desktop\html projects\Astro-WEB-Showcase\images\Milkyway-Final.png" alt="Image 1">
+                </a>
+                <div class="image-info">
+                    <p><b>Milkway captured over the night sky - August 2024</b></p>
+                </div>
+            </div>
+    
+            <div class="gallery-item">
+                <a href="C:\Users\lorik\OneDrive\Desktop\html projects\Astro-WEB-Showcase\images\Andromeda-Caass.png" target="_blank">
+                    <img src="C:\Users\lorik\OneDrive\Desktop\html projects\Astro-WEB-Showcase\images\Andromeda-Caass.png" alt="Image 2">
+                </a>
+                <div class="image-info">
+                    <p>Andromeda Galaxy, Cassiopeia - August 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About</h2>
+        <p>Hello! I'm DRAC, a passionate astronomer and astrophotographer dedicated
+            to capturing the wonders of the universe. My journey began at the age 
+            of 9 when I first looked up at the moon and became captivated by the glowing light the moon reflects.
+            I am excited to showcase my work here for you to explore.
+            I hope my images inspire you to look up and appreciate the beauty of the cosmos..</p>
+    </section>
+
+    <!-- Contact Section -->
+<section id="contact" class="contact">
+    <h2>Contact</h2>
+    <form id="contactForm" action="submit-form.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Popup Message -->
+    <div id="popupMessage" class="popup-message" style="display: none;">
+        Thank you for your message!
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Astrophotography by Lorik Misini. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js">
+        window.addEventListener('scroll', () => {
+            const heroSection = document.querySelector('.hero');
+        
+            // Calculate scroll position
+            const scrollPosition = window.scrollY;
+        
+            // Change the opacity and transform of the hero section based on scroll position
+            heroSection.style.opacity = Math.max(1 - scrollPosition / 300, 0); // Fade out
+            heroSection.style.transform = `translateY(${scrollPosition / 2}px)`; // Move up slightly
+        
+            // Add particle effect when scrolling down
+            if (scrollPosition > 0) {
+                heroSection.style.filter = 'blur(4px)'; // Optional: add a blur effect
+            } else {
+                heroSection.style.filter = 'none';
+            }
+        });
+        
+        
+        
+        
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+        
+            // Here you would typically handle the form submission, e.g., using fetch or XMLHttpRequest
+            // Simulating form submission for the purpose of this example
+            setTimeout(() => {
+                // Show the popup message
+                const popupMessage = document.getElementById('popupMessage');
+                popupMessage.style.display = 'block';
+        
+                // Hide the popup after 3 seconds
+                setTimeout(() => {
+                    popupMessage.style.display = 'none';
+                }, 3000);
+            }, 1000); // Simulated delay for the "submission"
+        });
+        
+        
+        
+        
+        // Add any future interactive features here if needed
+        
+        // Example: Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+        
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+    </script>
+
+</body>
+</html>
+
